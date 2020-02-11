@@ -21,20 +21,18 @@ int main()
 	
 	
 	cout<<endl<<"Сложение векторов"<<endl;
-	firstv.sum(b);
-	firstv.print();
+	Vector2d c = firstv.sum(b);
+	c.print();
 	
 	cout <<endl<< "Вычитание векторов" << endl;
-	firstv.sub(b);
-	firstv.print();
-	cout << endl;
+	c = firstv.sub(b); 
+	c.print();
 
-	cout << "Умножение вектора на число. Вектор с координатами:"<<endl;
+	cout <<endl<< "Умножение вектора на число. Вектор с координатами:"<<endl;
 	firstv.print();
 	cout << "Умножение на число 5" << endl;
-	firstv.mult(5);
-	firstv.print();
-	cout << endl;
+	c=firstv.mult(5);
+	c.print();
 
 	
 	cout << endl<<"Скалярное умножение векторов."<< endl;

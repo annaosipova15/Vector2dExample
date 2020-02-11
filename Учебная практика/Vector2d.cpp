@@ -1,5 +1,6 @@
 #include "Vector2d.h"
 #include <iostream>
+#include <string>
 using namespace std;
 Vector2d::Vector2d()
 {
@@ -50,35 +51,101 @@ double Vector2d::gety()
 	return this->y;
 }
 
-void Vector2d::print(void)
-{
-	cout << "Coordinate x = " << this->x << endl << "Coordinate y = " << this->y << endl;
-}
+//void Vector2d::print(void)
+//{
+//	cout << "Coordinate x = " << this->x << endl << "Coordinate y = " << this->y << endl;
+//}
 
 Vector2d Vector2d::sum(Vector2d b)
 {
-	Vector2d 
-	x = x + b.x;
-	y = y + b.y;
+	Vector2d a = { x + b.x, y + b.y };
+	return a;
+}
+Vector2d Vector2d::operator+(const Vector2d& v) const
+{
+	return Vector2d(x + v.x, y + v.y);
 }
 
-void Vector2d::sub(Vector2d b)
+Vector2d Vector2d::sub(Vector2d b)
 {
-	x = x - b.x;
-	y = y - b.y;
+	Vector2d a = { x - b.x, y - b.y };
+	return a;
+}
+Vector2d Vector2d::operator-(const Vector2d& v) const
+{
+	return Vector2d(x - v.x, y - v.y);
 }
 
-void Vector2d::mult(double b)
+Vector2d Vector2d::mult(double b)
 {
-	x = x * b;
-	y = y * b;
+	Vector2d a = { x * b, y * b };
+	return a;
+}
+Vector2d Vector2d::operator*(const int& v) const
+{
+	return Vector2d(x * v, y * v);
 }
 
 double Vector2d::scalarMult(Vector2d b)
 {
 	return x * b.x + y * b.y;
 }
+double Vector2d::operator*(const Vector2d& v) const
+{
+	return x * v.x + y * v.y;
+}
 
+Vector2d operator*(double r, Vector2d& v)
+{
+	return v * r;
+}
+
+Vector2d& Vector2d::operator++() {
+	x++;
+	y++;
+	return *this;
+}
+
+Vector2d Vector2d::operator++(int) {
+	Vector2d temp(x, y);
+	x++;
+	y++;
+	return temp;
+}
+
+Vector2d& Vector2d::operator--() {
+	x--;
+	y--;
+	return *this;
+}
+
+Vector2d Vector2d::operator--(int) {
+	Vector2d temp(x, y);
+	x--;
+	y--;
+	return temp;
+}
+
+const Vector2d& Vector2d::operator+= (const Vector2d& v) 
+{
+	x += v.x;
+	y += v.y;
+	return *this;
+}
+
+const Vector2d& Vector2d::operator-= (const Vector2d& v)
+{
+	x -= v.x;
+	y -= v.y;
+	return *this;
+}
+
+const Vector2d& Vector2d::operator*= (const double& v)
+{
+	x *= v;
+	y *= v;
+	return *this;
+}
 double Vector2d::lengthvector()
 {
 	return sqrt(x * x + y * y);
@@ -89,4 +156,10 @@ double Vector2d::Angletan(Vector2d b)
 	double cosinus = this->scalarMult(b) / (this->lengthvector() * b.lengthvector());
 	double sinus = sqrt(1 - cosinus * cosinus);
 	return sinus / cosinus;
+}
+
+Vector2d ::operator string()
+{
+	string s = "(" + to_string(x)+";"+to_string(y)+")";
+	return s;
 }
