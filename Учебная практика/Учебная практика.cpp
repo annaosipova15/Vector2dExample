@@ -7,11 +7,11 @@ int main()
 	setlocale(LC_ALL, "rus");
 	cout << "Координаты первого вектора" << endl;
 	Vector2d firstv = { 5,4 };
-	firstv.print();
+	//firstv.print();
 	cout << endl;
 	cout << "Координаты второго вектора" << endl;
 	Vector2d b = { 6, 8 };
-	b.print();
+	//b.print();
 	cout << endl;
 	cout << endl << "Меняем значения первого вектора" << endl;
 	firstv.setx(8.2);
@@ -22,24 +22,24 @@ int main()
 	
 	cout<<endl<<"Сложение векторов"<<endl;
 	Vector2d c = firstv.sum(b);
-	c.print();
+	//c.print();
 	
 	cout <<endl<< "Вычитание векторов" << endl;
 	c = firstv.sub(b); 
-	c.print();
+	//c.print();
 
 	cout <<endl<< "Умножение вектора на число. Вектор с координатами:"<<endl;
-	firstv.print();
+	//firstv.print();
 	cout << "Умножение на число 5" << endl;
 	c=firstv.mult(5);
-	c.print();
+	//c.print();
 
 	
 	cout << endl<<"Скалярное умножение векторов."<< endl;
 	cout << "Вектор с координатами: " << endl;
-	firstv.print();
+	//firstv.print();
 	cout << "Второй вектор с координатами: " << endl;
-	b.print();
+	//b.print();
 	cout << "Ответ: " << firstv.scalarMult(b)<< endl;
 
 	cout << endl << "Длина вектора = " << firstv.lengthvector() << endl;

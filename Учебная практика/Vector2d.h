@@ -27,14 +27,14 @@ public:
 	void sety(double);
 	double gety();
 	
-	void print(void);
-	operator string(void);
-
+	//void print(void);
+	
 	Vector2d sum(Vector2d);
 	Vector2d sub(Vector2d);
 	Vector2d mult(double);
 	double scalarMult(Vector2d);
 	double lengthvector();
 	double Angletan(Vector2d);
+	//operator std::string() const;
 };
 

@@ -1,7 +1,6 @@
 #include "Vector2d.h"
 #include <iostream>
-#include <string>
-using namespace std;
+#include <math.h>
 Vector2d::Vector2d()
 {
 	x = 0;
@@ -158,8 +157,6 @@ double Vector2d::Angletan(Vector2d b)
 	return sinus / cosinus;
 }
 
-Vector2d ::operator string()
-{
-	string s = "(" + to_string(x)+";"+to_string(y)+")";
-	return s;
-}
+//Vector2d::operator std::string() {
+//	return "(" + std::to_string(this->x) + "; " + std::to_string(this->y) + ")";
+//}
